@@ -30,7 +30,7 @@ public class ConsoleManager {
 
     public static void addScheduleTask(TaskDefine taskDefine) {
         try {
-			ConsoleManager.scheduleManager.getScheduleDataManager().addTask(taskDefine);
+			ConsoleManager.getScheduleManager().getScheduleDataManager().addTask(taskDefine);
 		} catch (Exception e) {
 			log.error(e.getMessage(), e);
 		}
@@ -38,7 +38,7 @@ public class ConsoleManager {
     
     public static void delScheduleTask(String targetBean, String targetMethod) {
         try {
-			ConsoleManager.scheduleManager.getScheduleDataManager().delTask(targetBean, targetMethod);
+			ConsoleManager.getScheduleManager().getScheduleDataManager().delTask(targetBean, targetMethod);
 		} catch (Exception e) {
 			log.error(e.getMessage(), e);
 		}
@@ -47,7 +47,7 @@ public class ConsoleManager {
     public static List<TaskDefine> queryScheduleTask() {
     	List<TaskDefine> taskDefines = new ArrayList<TaskDefine>();
         try {
-			List<TaskDefine> tasks = ConsoleManager.scheduleManager.getScheduleDataManager().selectTask();
+			List<TaskDefine> tasks = ConsoleManager.getScheduleManager().getScheduleDataManager().selectTask();
 			taskDefines.addAll(tasks);
 		} catch (Exception e) {
 			log.error(e.getMessage(), e);
